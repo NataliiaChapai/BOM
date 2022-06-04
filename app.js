@@ -8,7 +8,11 @@ let searchQuery = '';
 const BASE_URL = 'https://rickandmortyapi.com/api/character/';
 let totalItem = 5;
 const five = 5;
-let dataList = JSON.parse(localStorage.getItem('data'));
+let dataList = [];
+
+if (JSON.parse(localStorage.getItem('data'))) {
+    dataList = JSON.parse(localStorage.getItem('data'));
+}
 
 input.addEventListener('input', onInput);
 searchBtn.addEventListener('click', onSearchBtnClick);
